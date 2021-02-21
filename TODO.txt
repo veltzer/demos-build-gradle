@@ -12,3 +12,5 @@
 - DAG exercise:
 	create two independent products in gradle description
 	and see the disconnected graph.
+
+- submodules exercise.
