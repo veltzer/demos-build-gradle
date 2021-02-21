@@ -1,6 +1,14 @@
-exercises:
+- installing gradle in several ways exercise.
+
+- use various extra build tools:
 	Checkstyle - https://checkstyle.sourceforge.io/
 	PMD - https://pmd.github.io/
 	finbugs - http://findbugs.sourceforge.net/
 	CPD - https://pmd.github.io/latest/pmd_userdocs_cpd.html
 	Cobertura - https://cobertura.github.io/cobertura/
+
+- show the graph exercise.
+
+- DAG exercise:
+	create two independent products in gradle description
+	and see the disconnected graph.
