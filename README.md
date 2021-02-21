@@ -1,2 +1,2 @@
 # demos-gradle
-Demos for the gradle build system
+These are some of Mark's gradle examples and exercises.
