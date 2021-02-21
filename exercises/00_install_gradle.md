@@ -30,3 +30,5 @@ unzip it into some permanent folder
 add it's `bin` subfolder into your path.
 
 check that it works.
+
+https://gradle.org/install/#manually
