@@ -1,5 +1,5 @@
-Working with gradle.properties
-==============================
+Working with `gradle.properties`
+================================
 
 This exercise is here to familiarize you with `gradle.properties`
 

@@ -31,7 +31,7 @@ gradle -i build
 
 * Where do you think the cache is?
 
-* Hint: `~/.gradle/cache/build-cache-XXXX`
+* Hint: `~/.gradle/cache/build-caches-XXXX`
 
 * Now repeat the exercise but this time remove the cache between the two builds.
 
