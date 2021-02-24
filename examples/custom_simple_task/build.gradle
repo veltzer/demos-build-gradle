@@ -1,0 +1,33 @@
+/*
+task CountLines(type:Exec) {
+	doFirst {
+		standardOutput new FileOutputStream("count.txt")
+	}
+	commandLine 'wc', '-l', 'list.txt'
+}
+*/
+/*
+tasks.register("CountLines", Exec) {
+	doFirst {
+		standardOutput new FileOutputStream("count.txt")
+	}
+	commandLine 'wc', '-l', 'list.txt'
+}
+*/
+
+/*
+This DOES NOT work...
+tasks.register("CountLines", Exec) {
+	commandLine 'wc', '-l', 'list.txt', '>', 'count.txt'
+}
+*/
+/*
+tasks.register("CountLines", Exec) {
+	commandLine 'sh', '-c', 'wc -l list.txt > count.txt'
+}
+*/
+
+
+tasks.register("CountLines", Exec) {
+	commandLine './count_lines.sh'
+}
