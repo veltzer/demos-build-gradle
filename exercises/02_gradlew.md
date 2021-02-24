@@ -10,7 +10,7 @@ This way you can avoid various users having non identical versions of gradle.
 
 * Enter the project folder
 
-* Create an empty `gradle.buid` file
+* Create an empty `build.gradle` file
 
 * Check what is the version of your gradle using:
 
@@ -20,7 +20,7 @@ gradle -v
 
 * run
 
-```
+```shell
 gradle wrapper
 ```
 
