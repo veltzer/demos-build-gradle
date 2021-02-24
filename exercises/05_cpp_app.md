@@ -65,3 +65,5 @@ int main(int argc, char** argv, char** envp) {
 * Hint: look at the code, it shows you the extra flags to link and to compile.
 
 * Hint: you also need to install the relevant library.
+
+* Now stop using gradles conventions for folders: put your source in `src` and make gradle use it.
