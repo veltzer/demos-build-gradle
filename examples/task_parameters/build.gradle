@@ -1,0 +1,18 @@
+
+def something = "hello"
+
+tasks.register('say') {
+    doLast {
+        println "here is it -> ${something}"
+    }
+}
+
+def create_my_task(what_to_say) {
+	tasks.register('sayit') {
+	    doLast {
+		println "here is it -> ${what_to_say}"
+	    }
+	}
+}
+
+create_my_task "moo"
