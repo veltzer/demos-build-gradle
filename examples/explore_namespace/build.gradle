@@ -1,0 +1,34 @@
+// def f=5
+// println this.getClass().getParent()
+// this.properties.each { println "$it.key -> $it.value" }
+// this.properties.each { println "$it.key" }
+// this.binding.variables.each {k,v -> println "$k"}
+if("jar" in this.properties) {
+	println "yes"
+} else {
+	println "no"
+}
+apply plugin: "java"
+println jar.manifest
+jar.manifest.attributes.each {k,v -> println "$k"}
+if("jar" in this.properties) {
+	println "yes"
+} else {
+	println "no"
+}
+println "properties"
+println "=========="
+// this.properties.each { println "$it.key" }
+println "variables"
+println "========="
+// this.binding.variables.each {k,v -> println "$k"}
+
+/*
+task CountLines(type:Exec) {
+        doFirst {
+                standardOutput new FileOutputStream("count.txt")
+        }
+        commandLine 'wc', '-l', 'list.txt'
+}
+println CountLines.getClass()
+*/
