@@ -5,8 +5,10 @@ Both tasks receive a parameter called "src_dir" which is the source code
 folder that they both will work on.
 
 You need to decide to how to pass this parameter to both tasks.
-	(two options: either a parameter to the class constuctor
-	or closure?)
+several options:
+- actually have a constructor and pass a parameter to it
+- pass the parameters to task creation function and from there to task field
+- just pull the parameters from the closure
 
 Task number 1:
 recursively traverse the source folder and output a file called "line_numbers.txt"
