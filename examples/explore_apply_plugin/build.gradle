@@ -1,0 +1,9 @@
+println "We are now before apply plugin"
+try {
+	println jar
+} catch (e) {
+	println "got exception"+e
+}
+apply plugin : "java" 
+println "We are now after apply plugin"
+println jar
