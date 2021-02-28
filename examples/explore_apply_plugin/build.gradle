@@ -4,6 +4,8 @@ try {
 } catch (e) {
 	println "got exception"+e
 }
-apply plugin : "java" 
+apply plugin : "java"
 println "We are now after apply plugin"
 println jar
+this.properties.each { println "$it.key" }
+// println this.getClass()
