@@ -1,0 +1,14 @@
+@CacheableTask
+class OnlyOutputTask extends DefaultTask {
+    @OutputFile
+    final RegularFileProperty output_file_name = project.objects.fileProperty()
+    @TaskAction
+    def only_output_task() {
+        def output_file = output_file_name.get().asFile
+        output_file.delete()
+	output_file << "Mark Hello, world!\n"
+    }
+}
+tasks.register('only_output_task', OnlyOutputTask) {
+    output_file_name = project.layout.projectDirectory.file('output.txt')
+}
