@@ -1,3 +1,7 @@
+plugins {
+	id "java"
+}
+
 import groovy.io.FileType
 
 def src_dir="src"
@@ -16,6 +20,7 @@ def check_regexp(file, regexp) {
 }
 
 tasks.register('count_lines') {
+    dependsOn ':compileJava'
     description "produce a line count for the source folder"
     doLast {
     File output_file = new File("count_lines.txt")
@@ -29,6 +34,7 @@ tasks.register('count_lines') {
 
 def regexp = /.*Mark.*/
 tasks.register('check_no_regexp') {
+    dependsOn ':compileJava'
     description "check that a regexp is not in the source files"
     doLast {
         def dir = new File(src_dir)
@@ -36,4 +42,9 @@ tasks.register('check_no_regexp') {
 	    check_regexp(it, regexp)
         }
     }
+}
+
+tasks.register('full_build') {
+    dependsOn ':count_lines', ':check_no_regexp'
+    description "sync task"
 }
