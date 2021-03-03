@@ -8,7 +8,7 @@ def something = "what to say1"
 tasks.register('say1') {
     description "say1 description"
     doLast {
-        println "here is it -> ${something}"
+        println "here it is -> ${something}"
     }
 }
 
@@ -19,7 +19,7 @@ def create_my_task(what_to_say) {
 	tasks.register('say2') {
 	    description "say2 description"
 	    doLast {
-		println "here is it -> ${what_to_say}"
+		println "here it is -> ${what_to_say}"
 	    }
 	}
 }
@@ -32,6 +32,20 @@ def what_to_say3 = "what to say3"
 task say3() {
     description "say3 description"
     doLast {
-        println "here is it -> ${what_to_say3}"
+        println "here it is -> ${what_to_say3}"
     }
 }
+
+/*
+	Fourth way to to define a task: class task
+*/
+class Say4 extends DefaultTask {
+    String description = "say4 description"
+    @Input
+    String what_to_say = 'what to say4'
+    @TaskAction
+    def greet() {
+        println "here it is -> ${what_to_say}"
+    }
+}
+task say4(type: Say4)
