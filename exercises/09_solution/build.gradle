@@ -1,0 +1,28 @@
+@CacheableTask
+class Combine extends DefaultTask {
+    String description = "combine two files"
+    @InputFile
+    final RegularFileProperty filename1 = project.objects.fileProperty() 
+    @InputFile
+    final RegularFileProperty filename2 = project.objects.fileProperty() 
+    @OutputFile
+    final RegularFileProperty output_file_name = project.objects.fileProperty()
+    @TaskAction
+    def combine() {
+        def output_file = output_file_name.get().asFile
+        output_file.delete()
+        def file1 = filename1.get().asFile 
+        file1.eachLine {
+             output_file << it << "\n"
+        }
+        def file2 = filename2.get().asFile 
+        file2.eachLine {
+             output_file << it << "\n"
+        }
+    }
+}
+tasks.register('combine', Combine) {
+    filename1 = project.layout.projectDirectory.file('filename1.txt')
+    filename2 = project.layout.projectDirectory.file('filename2.txt')
+    output_file_name = project.layout.projectDirectory.file('output.txt')
+}
