@@ -1,2 +1,3 @@
 #!/bin/sh
-gradle :say :sayit
+gradle :say1 :say2 :say3
+gradle tasks --all | grep say

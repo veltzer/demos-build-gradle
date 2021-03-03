@@ -1,18 +1,37 @@
 
-def something = "hello"
+/*
+	First way to define a task: tasks.register
+	the parameter is a global variable which is accessed via the closure mechanism
+*/
 
-tasks.register('say') {
+def something = "what to say1"
+tasks.register('say1') {
+    description "say1 description"
     doLast {
         println "here is it -> ${something}"
     }
 }
 
+/*
+	Second way to define a task: task creator pattern with task.register
+*/
 def create_my_task(what_to_say) {
-	tasks.register('sayit') {
+	tasks.register('say2') {
+	    description "say2 description"
 	    doLast {
 		println "here is it -> ${what_to_say}"
 	    }
 	}
 }
+create_my_task "what to say2"
 
-create_my_task "moo"
+/*
+	Third way to to define a task: task pattern
+*/
+def what_to_say3 = "what to say3"
+task say3() {
+    description "say3 description"
+    doLast {
+        println "here is it -> ${what_to_say3}"
+    }
+}
