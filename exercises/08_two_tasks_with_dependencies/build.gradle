@@ -1,0 +1,39 @@
+import groovy.io.FileType
+
+def src_dir="src"
+
+def get_line_count(file) {
+    def lines = file.readLines()
+    lines.size()
+}
+
+def check_regexp(file, regexp) {
+    file.eachLine {
+        if(it ==~ regexp) {
+	    throw new GradleException("regexp exists in line ${it}")
+        }
+    }
+}
+
+tasks.register('count_lines') {
+    description "produce a line count for the source folder"
+    doLast {
+    File output_file = new File("count_lines.txt")
+    output_file.delete()
+        def dir = new File(src_dir)
+        dir.eachFileRecurse (FileType.FILES) { file ->
+            output_file << "${file} ${get_line_count(file)}\n"
+        }
+    }
+}
+
+def regexp = /.*Mark.*/
+tasks.register('check_no_regexp') {
+    description "check that a regexp is not in the source files"
+    doLast {
+        def dir = new File(src_dir)
+        dir.eachFileRecurse (FileType.FILES) {
+	    check_regexp(it, regexp)
+        }
+    }
+}
