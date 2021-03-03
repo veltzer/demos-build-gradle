@@ -1,6 +1,6 @@
 package hello;
 
-/* Written by Dark */
+/* Written by Mark */
 
 public class HelloWorld {
 	public static void main(String[] args) {
