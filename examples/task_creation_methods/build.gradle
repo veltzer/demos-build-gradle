@@ -53,7 +53,12 @@ class Say4 extends DefaultTask {
     }
 }
 // define the instance, without this the class definition above is not taken into account
+/*
 task say4(type: Say4) {
+    what_to_say = 'what to say4'
+}
+*/
+tasks.register('say4', Say4) {
     what_to_say = 'what to say4'
 }
 
