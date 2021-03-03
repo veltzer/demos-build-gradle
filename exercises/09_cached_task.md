@@ -8,8 +8,8 @@ which is a concatenation of the two files.
 (write it like a class with decorators and register using tasks.register)
 
 * Now make your class cachable.
-- put the right decorator on your class
-- to correctly "tell gradle" what your inputs and output are
+	* put the right decorator on your class
+	* to correctly "tell gradle" what your inputs and output are
 	(just use the right decorators)
 
 * see indeed, that when the files one.txt and two.txt do not change, your task
