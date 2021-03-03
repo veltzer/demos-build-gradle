@@ -1,7 +1,7 @@
 
 /*
-	First way to define a task: tasks.register
-	the parameter is a global variable which is accessed via the closure mechanism
+    First way to define a task: tasks.register
+    the parameter is a global variable which is accessed via the closure mechanism
 */
 
 def something = "what to say1"
@@ -13,20 +13,22 @@ tasks.register('say1') {
 }
 
 /*
-	Second way to define a task: task creator pattern with task.register
+    Second way to define a task: task creator pattern with task.register
+    the parameter is a parameter to the creator function
 */
 def create_my_task(what_to_say) {
-	tasks.register('say2') {
-	    description "say2 description"
-	    doLast {
-		println "here it is -> ${what_to_say}"
-	    }
-	}
+    tasks.register('say2') {
+        description "say2 description"
+        doLast {
+        println "here it is -> ${what_to_say}"
+        }
+    }
 }
 create_my_task "what to say2"
 
 /*
-	Third way to to define a task: task pattern
+    Third way to to define a task: task pattern
+    the parameters is global and is passed via closure
 */
 def what_to_say3 = "what to say3"
 task say3() {
@@ -37,15 +39,32 @@ task say3() {
 }
 
 /*
-	Fourth way to to define a task: class task
+    Fourth way to define a task: class task
+    The parameters is a class member and can be set on task creation
+    References: https://docs.gradle.org/current/userguide/custom_tasks.html
 */
 class Say4 extends DefaultTask {
     String description = "say4 description"
     @Input
-    String what_to_say = 'what to say4'
+    String what_to_say = 'what to say4 - original'
     @TaskAction
     def greet() {
         println "here it is -> ${what_to_say}"
     }
 }
-task say4(type: Say4)
+// define the instance, without this the class definition above is not taken into account
+task say4(type: Say4) {
+    what_to_say = 'what to say4'
+}
+
+/*
+    Fifth way to define a task: tasks.create (deprecated)
+    References: https://www.tutorialspoint.com/gradle/gradle_tasks.htm
+*/
+def what_to_say5 = 'what to say5'
+tasks.create(name: 'say5') {
+    description = "say5 description"
+    doLast {
+        println "here it is -> ${what_to_say5}"
+    }
+}
