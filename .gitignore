@@ -1,6 +1,8 @@
 # Compiled class file
 *.class
 
+*.stamp
+
 # Gradle stuff
 .gradle
 
