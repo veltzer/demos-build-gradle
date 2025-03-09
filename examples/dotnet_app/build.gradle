@@ -1,0 +1,50 @@
+// build.gradle
+plugins {
+    id 'base'
+    id 'org.gradle.wrapper'
+    id 'io.freefair.dotnet'
+}
+
+// Configure dotnet tasks
+dotnet {
+    // Specify the SDK version
+    sdkVersion = '7.0.0'  // Or your preferred version
+    
+    // Specify the project type
+    projects {
+        main {
+            projectFile = "MyDotNetApp.csproj"
+            projectName = "MyDotNetApp"
+            // You can set more properties as needed
+        }
+    }
+}
+
+// Create a task to initialize a new .NET console project
+task initDotNetProject(type: Exec) {
+    description = 'Initialize a new .NET console project'
+    
+    doFirst {
+        mkdir "src"
+    }
+    
+    workingDir = "src"
+    commandLine 'dotnet', 'new', 'console', '-n', 'MyDotNetApp'
+}
+
+// Task to add Newtonsoft.Json package
+task addNewtonsoftJson(type: Exec, dependsOn: initDotNetProject) {
+    description = 'Add Newtonsoft.Json package to the project'
+    
+    workingDir = "src/MyDotNetApp"
+    commandLine 'dotnet', 'add', 'package', 'Newtonsoft.Json', '--version', '13.0.3'
+}
+
+// Define repositories for dependencies (may be needed for other Gradle plugins)
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+// Default task
+defaultTasks 'build'
