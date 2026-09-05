@@ -13,10 +13,10 @@ gradle -v
 
 * create a java file called HelloWorld.java residing in a folder structure like so:
 └── src
-    └── main
-        └── java
-            └── hello
-                └── HelloWorld.java
+  └── main
+  └── java
+  └── hello
+  └── HelloWorld.java
 
 with the following content:
 
@@ -35,8 +35,8 @@ public class HelloWorld {
 ```shell
 gradle
 ```
-or 
-```
+or
+```text
 gradle build
 ```
 

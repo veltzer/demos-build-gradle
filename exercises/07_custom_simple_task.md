@@ -19,6 +19,5 @@ The output file will be `count.txt` with the following content:
 
 you can write this in two different ways: pure groovy code, or derive from an Exec task.
 
-
 * Hint: https://docs.gradle.org/current/userguide/more_about_tasks.html
 * Hint: https://docs.gradle.org/current/userguide/custom_tasks.html

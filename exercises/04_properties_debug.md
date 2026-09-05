@@ -6,7 +6,7 @@ This exercise is here to familiarize you with `gradle.properties`
 * start with an empty folder and with an empty `build.gradle`
 
 * add the property
-```
+```text
 foo=bar
 ```
 in `~/.gradle/gradle.properties`
@@ -21,7 +21,7 @@ gradle :properties | grep foo
 ```
 
 * now overwrite this with the following in `./gradle.properties`
-```
+```text
 foo=baz
 ```
 

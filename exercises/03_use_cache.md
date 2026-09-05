@@ -8,7 +8,7 @@ The purpose of this exercise is to see the Gradle cache in action.
 * See that you can build it with gradle and that it runs.
 
 * Turn on the grade caches by putting in `gradle.properties`:
-```
+```text
 org.gradle.caching=true
 ```
 

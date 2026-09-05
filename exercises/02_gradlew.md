@@ -46,7 +46,7 @@ Make it different from it.
 ./gradlew -v
 ```
 
-* Where do you think this version of gradle was downloaded to? checkout ` ~/.gradle/wrapper/dists`
+* Where do you think this version of gradle was downloaded to? checkout `~/.gradle/wrapper/dists`
 
 The idea is that from now on you will use `./gradlew` for all you building needs and stop using the gradle
 which is outside your project. If your entire team uses `./gradlew` then they will all be synchronized

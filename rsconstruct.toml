@@ -6,3 +6,30 @@ src_dirs = ["."]
 # lint the GitHub Actions workflow files with actionlint
 [processor.actionlint]
 src_dirs = [".github/workflows"]
+
+# ─── markdown ────────────────────────────────────────────────────────────────
+
+[processor.rumdl]
+src_dirs = ["examples", "exercises"]
+src_files = ["README.md"]
+
+# ─── shell ───────────────────────────────────────────────────────────────────
+
+[processor.shellcheck]
+src_dirs = ["examples", "exercises"]
+
+# ─── c / c++ ─────────────────────────────────────────────────────────────────
+
+[processor.cppcheck]
+src_dirs = ["examples/cpp/src/main/cpp", "exercises/10_cpp_with_libs"]
+args = [
+	"--error-exitcode=1",
+	"--enable=warning,style,performance,portability",
+	"--inline-suppr",
+]
+
+# ─── java ────────────────────────────────────────────────────────────────────
+
+[processor.checkstyle]
+src_dirs = ["examples", "exercises/08_two_tasks_with_dependencies/src/main/java/hello"]
+args = ["-c", "checkstyle.xml"]
