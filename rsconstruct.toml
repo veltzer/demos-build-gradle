@@ -19,7 +19,7 @@ src_files = ["README.md"]
 
 # ─── shell ───────────────────────────────────────────────────────────────────
 
-[processor.checker.shellcheck]
+[processor.checker.ishellcheck]
 src_dirs = ["examples", "exercises"]
 
 # ─── c / c++ ─────────────────────────────────────────────────────────────────
@@ -34,6 +34,5 @@ args = [
 
 # ─── java ────────────────────────────────────────────────────────────────────
 
-[processor.checker.checkstyle]
+[processor.checker.icheckstyle]
 src_dirs = ["examples", "exercises/08_two_tasks_with_dependencies/src/main/java/hello"]
-args = ["-c", "checkstyle.xml"]
