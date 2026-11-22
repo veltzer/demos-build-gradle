@@ -8,21 +8,25 @@ The purpose of this exercise is to see the Gradle cache in action.
 * See that you can build it with gradle and that it runs.
 
 * Turn on the grade caches by putting in `gradle.properties`:
+
 ```text
 org.gradle.caching=true
 ```
 
 * Now run a first build with:
+
 ```shell
 gradle -i build
 ```
 
 * Remove the `build` folder with:
+
 ```shell
 gradle clean
 ```
 
 * Rebuild with:
+
 ```shell
 gradle -i build
 ```

@@ -13,6 +13,7 @@ The input file will be `list.txt` with the following content:
 ```
 
 The output file will be `count.txt` with the following content:
+
 ```text
 3
 ```

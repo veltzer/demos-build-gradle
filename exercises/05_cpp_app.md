@@ -19,6 +19,7 @@ int main(int argc, char** argv, char** envp) {
 ```
 
 * Add the following `build.gradle` file:
+
 ```Groovy
 plugins {
 	id 'cpp-application'
@@ -26,6 +27,7 @@ plugins {
 ```
 
 * Build you project:
+
 ```shell
 gradle build
 ```
@@ -37,6 +39,7 @@ gradle build
 * Can you build a release version?
 
 * Advanced: take the following code and try to make gradle compile it:
+
 ```C++
 #include <iostream>	// for std::cout
 #include <string>	// for std::string

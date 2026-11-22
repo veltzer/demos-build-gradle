@@ -35,7 +35,9 @@ public class HelloWorld {
 ```shell
 gradle
 ```
+
 or
+
 ```text
 gradle build
 ```

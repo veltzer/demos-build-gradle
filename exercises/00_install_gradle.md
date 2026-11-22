@@ -4,6 +4,7 @@ Installing Gradle
 * The purpose of this exercise is to install gradle in 3 different ways.
 
 After each installation note the version of gradle you got using
+
 ```bash
 gradle -v
 ```
@@ -15,6 +16,7 @@ sudo apt install gradle
 ```
 
 uninstall with:
+
 ```shell
 sudo dpkg --purge gradle
 ```
