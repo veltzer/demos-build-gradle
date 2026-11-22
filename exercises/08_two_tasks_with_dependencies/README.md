@@ -7,6 +7,7 @@ folder that they both will work on.
 
 You need to decide to how to pass this parameter to both tasks.
 several options:
+
 - actually have a constructor and pass a parameter to it
 - pass the parameters to task creation function and from there to task field
 - just pull the parameters from the closure
@@ -24,6 +25,7 @@ Example: I will pass this -> ["c:\\temp", ...] to your task and it will check
     that no source file has this in it.
 
 General requirements:
+
 - Make both tasks depend on the java compilation.
 - Make a task that depends on both of these tasks
 
