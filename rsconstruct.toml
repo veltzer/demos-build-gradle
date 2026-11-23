@@ -33,11 +33,12 @@ src_dirs = ["examples", "exercises"]
 
 # ─── c / c++ ─────────────────────────────────────────────────────────────────
 
+# Each C++ file is its own standalone program (hello.cc, hellosigc.cc): the default one-run-per-file mode fits.
 [processor.checker.cppcheck]
 src_dirs = ["examples/cpp/src/main/cpp", "exercises/10_cpp_with_libs"]
 args = [
 	"--error-exitcode=1",
-	"--enable=warning,style,performance,portability",
+	"--enable=warning,style,performance,portability,information,unusedFunction",
 	"--check-level=exhaustive",
 	"--inline-suppr",
 ]
