@@ -4,6 +4,11 @@
 # src_dirs entries name directories; "." (the whole tree) is a config error
 reject_dot_src_dirs = true
 
+# check the XML files with xmllint
+[processor.checker.ixmllint]
+src_files = ["checkstyle.xml"]
+strict = true
+
 [processor.checker.taplo]
 src_files = [".rumdl.toml", "rsconstruct.toml"]
 
