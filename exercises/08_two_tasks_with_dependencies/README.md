@@ -14,7 +14,7 @@ several options:
 
 Task number 1:
 recursively traverse the source folder and output a file called "line_numbers.txt"
-    which has the structure: "<source_file> <line_number>" for each source file.
+which has the structure: "<source_file> <line_number>" for each source file.
 
 Task number 2:
 Run a check on all source files to check that they DONT contain a set of regexps
@@ -22,7 +22,7 @@ Run a check on all source files to check that they DONT contain a set of regexps
 If this task finds the regexp in any of the source files, it should fail.
 
 Example: I will pass this -> ["c:\\temp", ...] to your task and it will check
-    that no source file has this in it.
+that no source file has this in it.
 
 General requirements:
 
